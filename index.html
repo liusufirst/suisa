@@ -78,16 +78,52 @@
                 <div class="map-container">
                     <div class="map-background">
                         <div class="river-cam"></div>
-                        <div class="college emmanuel-college">
+                        
+                        <!-- 详细路线 -->
+                        <svg class="route-path" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path class="route-line" d="M 10 50 Q 25 30 40 50 Q 55 70 70 50 Q 85 30 90 50" 
+                                  stroke="#fff" stroke-width="0.5" fill="none" opacity="0.6"/>
+                            <circle class="route-dot" cx="10" cy="50" r="0.8" fill="#fff"/>
+                            <circle class="route-dot" cx="40" cy="50" r="0.8" fill="#fff"/>
+                            <circle class="route-dot" cx="70" cy="50" r="0.8" fill="#fff"/>
+                            <circle class="route-dot" cx="90" cy="50" r="0.8" fill="#fff"/>
+                        </svg>
+                        
+                        <div class="college emmanuel-college" data-college="emmanuel">
                             <div class="college-icon">🏛️</div>
                             <div class="college-name">Emmanuel College</div>
+                            <div class="college-popup">
+                                <h4>Emmanuel College</h4>
+                                <p>Where our story began...</p>
+                                <p>Founded in 1584</p>
+                            </div>
                         </div>
-                        <div class="college newnham-college">
+                        
+                        <div class="college newnham-college" data-college="newnham">
                             <div class="college-icon">🏛️</div>
                             <div class="college-name">Newnham College</div>
+                            <div class="college-popup">
+                                <h4>Newnham College</h4>
+                                <p>Where magic happened...</p>
+                                <p>Founded in 1871</p>
+                            </div>
                         </div>
-                        <div class="path-line"></div>
+                        
                         <div class="walking-person">🚶</div>
+                        
+                        <!-- 路线标记点 -->
+                        <div class="route-marker marker-1">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">King's Parade</div>
+                        </div>
+                        <div class="route-marker marker-2">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">Silver Street</div>
+                        </div>
+                        <div class="route-marker marker-3">
+                            <div class="marker-dot"></div>
+                            <div class="marker-label">Newnham Walk</div>
+                        </div>
                     </div>
                     <div class="map-description">
                         <p>From Emmanuel College to Newnham College</p>

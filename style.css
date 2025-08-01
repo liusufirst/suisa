@@ -406,6 +406,37 @@ body {
     50% { opacity: 0.8; }
 }
 
+/* 详细路线 */
+.route-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.route-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawPath 3s ease-in-out forwards;
+}
+
+.route-dot {
+    animation: dotGlow 2s ease-in-out infinite;
+}
+
+@keyframes drawPath {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dotGlow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
 /* 学院样式 */
 .college {
     position: absolute;
@@ -417,6 +448,8 @@ body {
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 2;
 }
 
 .college:hover {
@@ -436,6 +469,55 @@ body {
     font-weight: bold;
 }
 
+/* Apple风格的弹出效果 */
+.college-popup {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 15px;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.college-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.95);
+}
+
+.college:hover .college-popup {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+}
+
+.college-popup h4 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.college-popup p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 5px 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
 .emmanuel-college {
     top: 20px;
     left: 20px;
@@ -453,26 +535,49 @@ body {
     100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); }
 }
 
-/* 路径线 */
-.path-line {
+/* 路线标记点 */
+.route-marker {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 2px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(255, 255, 255, 0.3) 20%, 
-        rgba(255, 255, 255, 0.8) 50%, 
-        rgba(255, 255, 255, 0.3) 80%, 
-        transparent 100%);
-    animation: pathGlow 2s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
 }
 
-@keyframes pathGlow {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+.marker-dot {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    animation: markerPulse 2s ease-in-out infinite;
+}
+
+.marker-label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    white-space: nowrap;
+}
+
+@keyframes markerPulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+.marker-1 {
+    top: 30%;
+    left: 25%;
+}
+
+.marker-2 {
+    top: 50%;
+    left: 50%;
+}
+
+.marker-3 {
+    top: 30%;
+    right: 25%;
 }
 
 /* 行走的人 */
@@ -483,6 +588,7 @@ body {
     transform: translateY(-50%);
     font-size: 1.5rem;
     animation: walkPath 4s ease-in-out infinite;
+    z-index: 3;
 }
 
 @keyframes walkPath {
@@ -651,6 +757,19 @@ body {
     .walking-person {
         font-size: 1.2rem;
     }
+    
+    .college-popup {
+        min-width: 150px;
+        padding: 10px;
+    }
+    
+    .college-popup h4 {
+        font-size: 0.9rem;
+    }
+    
+    .college-popup p {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -688,5 +807,18 @@ body {
     
     .college-name {
         font-size: 0.6rem;
+    }
+    
+    .college-popup {
+        min-width: 120px;
+        padding: 8px;
+    }
+    
+    .college-popup h4 {
+        font-size: 0.8rem;
+    }
+    
+    .college-popup p {
+        font-size: 0.7rem;
     }
 } 
