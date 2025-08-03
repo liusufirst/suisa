@@ -76,20 +76,17 @@ body {
 }
 
 .opening-text .char:nth-child(1) { animation-delay: 0s, 0s; }
-.opening-text .char:nth-child(2) { animation-delay: 0.4s, 0.4s; }
-.opening-text .char:nth-child(3) { animation-delay: 0.8s, 0.8s; }
-.opening-text .char:nth-child(4) { animation-delay: 1.2s, 1.2s; }
-.opening-text .char:nth-child(5) { animation-delay: 1.6s, 1.6s; }
-.opening-text .char:nth-child(6) { animation-delay: 2s, 2s; }
-.opening-text .char:nth-child(7) { animation-delay: 2.4s, 2.4s; }
-.opening-text .char:nth-child(8) { animation-delay: 2.8s, 2.8s; }
-.opening-text .char:nth-child(9) { animation-delay: 3.2s, 3.2s; }
-.opening-text .char:nth-child(10) { animation-delay: 3.6s, 3.6s; }
-.opening-text .char:nth-child(11) { animation-delay: 4s, 4s; }
-.opening-text .char:nth-child(12) { animation-delay: 4.4s, 4.4s; }
-.opening-text .char:nth-child(13) { animation-delay: 4.8s, 4.8s; }
-.opening-text .char:nth-child(14) { animation-delay: 5.2s, 5.2s; }
-.opening-text .char:nth-child(15) { animation-delay: 5.6s, 5.6s; }
+.opening-text .char:nth-child(2) { animation-delay: 0.8s, 0.8s; }
+.opening-text .char:nth-child(3) { animation-delay: 1.6s, 1.6s; }
+.opening-text .char:nth-child(4) { animation-delay: 2.4s, 2.4s; }
+.opening-text .char:nth-child(5) { animation-delay: 3.2s, 3.2s; }
+.opening-text .char:nth-child(6) { animation-delay: 4s, 4s; }
+.opening-text .char:nth-child(7) { animation-delay: 4.8s, 4.8s; }
+.opening-text .char:nth-child(8) { animation-delay: 5.6s, 5.6s; }
+.opening-text .char:nth-child(9) { animation-delay: 6.4s, 6.4s; }
+.opening-text .char:nth-child(10) { animation-delay: 7.2s, 7.2s; }
+.opening-text .char:nth-child(11) { animation-delay: 8s, 8s; }
+.opening-text .char:nth-child(12) { animation-delay: 8.8s, 8.8s; }
 
 @keyframes charAppear {
     0% {

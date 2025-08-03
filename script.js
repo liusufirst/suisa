@@ -23,16 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
 // 开场动画处理
 function handleOpeningAnimation() {
     console.log('🎬 开场动画已启用');
-    // 显示开场动画，8秒后淡出（给每个字符足够时间）
+    // 显示开场动画，11秒后淡出（给每个字符足够时间）
     const openingAnimation = document.getElementById('opening-animation');
     if (openingAnimation) {
         openingAnimation.style.display = 'flex';
-        // 8秒后自动隐藏开场动画
+        // 11秒后自动隐藏开场动画
         setTimeout(() => {
             openingAnimation.style.display = 'none';
             console.log('🎬 开场动画结束，显示相机监视屏');
             showBirthdayVideo();
-        }, 8000);
+        }, 11000);
     }
 }
 
