@@ -3,192 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 Neon Birthday Party!</title>
+    <title>小米生日快乐</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="castle-background">
-        <div class="castle"></div>
-        <div class="stars"></div>
-        <div class="fireworks"></div>
+    <!-- 开场动画 -->
+    <div id="opening-animation" style="display: none;">
+        <div class="opening-text">
+            <span class="char" data-char="小">小</span>
+            <span class="char" data-char="米">米</span>
+            <span class="char" data-char="生">生</span>
+            <span class="char" data-char="日">日</span>
+            <span class="char" data-char="快">快</span>
+            <span class="char" data-char="乐">乐</span>
+        </div>
     </div>
-    
+
+    <!-- 生日视频容器 -->
+    <div id="birthday-video-container" style="display: none;">
+        <div class="camera-monitor">
+            <div class="monitor-screen">
+                <div class="recording-dot"></div>
+                <video id="birthday-video-player" controls>
+                    <source src="suisa2.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+                <div id="birthday-video-overlay" class="video-overlay">
+                    <div class="manual-play-btn">
+                        <span>🎬 Click to Play</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主页面 -->
     <div class="container">
-        <div class="birthday-card">
-            <div class="neon-border"></div>
-            
-            <div class="balloons">
-                <div class="balloon balloon1 neon-pink">🎈</div>
-                <div class="balloon balloon2 neon-blue">🎈</div>
-                <div class="balloon balloon3 neon-green">🎈</div>
-                <div class="balloon balloon4 neon-purple">🎈</div>
-                <div class="balloon balloon5 neon-yellow">🎈</div>
-            </div>
-            
-            <div class="disney-castle">
-                <div class="castle-icon">🏰</div>
-                <div class="castle-glow"></div>
-            </div>
-            
-            <h1 class="title neon-text">🎂 Happy Birthday! 🎂</h1>
-            
-            <div class="message">
-                <p class="neon-text">May your birthday shine like neon lights!</p>
-                <p class="neon-text">May your dreams be as grand as a castle!</p>
-                <p class="neon-text">May every day be filled with magic!</p>
-            </div>
-            
-            <div class="gifts">
-                <div class="gift gift1 neon-pink">🎁</div>
-                <div class="gift gift2 neon-blue">🎁</div>
-                <div class="gift gift3 neon-green">🎁</div>
-            </div>
-            
-            <button class="celebrate-btn neon-btn" onclick="celebrate()">Click to Celebrate!</button>
-            
-            <div class="confetti-container" id="confetti-container"></div>
-        </div>
-        
-        <!-- 给小米的信件 -->
-        <div class="letter-section">
-            <h2 class="neon-text" style="text-align: center; margin-bottom: 30px;">💌 A Letter to Xiaomi 💌</h2>
-            <div class="letter-content">
-                <p>不知道什么时候谷睿佳变成了小米。</p>
-                
-                <p>可能是第一次感觉你长得很可爱；可能是第一次感觉你人不错；可能是等着谷睿佳回我消息；可能是那一次你告诉我你叫小米，（不知道你这招是哪里学的，认可了）；可能是那一次跟我熬夜到第二天早上还在那讨论去吃kanto的可能性，（我感觉你都快碎了，傻傻地站在那里，差点想抱着你亲）；也可能是看你晕倒在轮椅上像只小猫；我不知道为什么这么喜欢小米，也不知道为什么有跟小米说不完的话。但我确切地知道第一次抱小米脑子里一片空白，什么都没想，跟做梦一样，因为小米软软的，香香的。</p>
-                
-                <p>我喜欢抱小米，亲小米和小米睡觉；喜欢跟小米说所有生活中的事情，很多时候第一反应是拍照发给小米，或者记下来下次跟小米说，甚至有时候反应过来是不是不该跟小米说；喜欢到有的时候甚至会展现出曾经只在Fiona面前的幼稚行为；小米是我很好的朋友，然后，很幸运，也是我女朋友，我一直是这样想。</p>
-                
-                <p>我之前一直以为爱一个人是有一个标准的，都满足我就喜欢她，不满足就不行。但小米在这个标准里很难达到一个满意的分数。但有一天我突然发现，曾经说好哥们敏感的自己，也慢慢变成了一个，不能深思熟虑的，敏感的人，会不知不觉地吃醋的人，可能喜欢就是这样的吧，我猜。</p>
-                
-                <p>回想起来，小米这个人一开始真的很奇怪，我不知道为什么她不给我发可爱的表情，不特意说一些可爱撩人的话，也看上去对男的没兴趣。我不确定我是不是喜欢这样的女生，更不确定这样的女生是不是喜欢我，因为小米的真诚好像很容易给别人错觉。哪怕是在一起之后，我有时也会觉得小米是不是不那么喜欢我。</p>
-                
-                <p>但是我后来明白了，小米的爱是淡淡的，像茉莉花茶。小米的可爱不是装出来了，小米的生气也不是，小米的喜欢更不是。小米是一个强壮独立聪明的女人，不是哭哭啼啼的小女孩。但是我觉得就算是这样厉害的女生也一定会有难过伤心的时候吧，一定要跟我说呀！</p>
-                
-                <p>回深圳之后感觉很奇怪，</p>
-                
-                <p>18岁的小米很厉害，把哥们搞到手不是什么容易的事来的。</p>
-                
-                <p>希望19岁的小米是明媚的，开心的，漂亮的，自由的。希望小米一直可爱。我也会一直一直爱我的可爱的小米。</p>
-            </div>
-            
-            <!-- 剑桥地图 -->
-            <div class="cambridge-map">
-                <h3>🗺️ Our Cambridge Journey 🗺️</h3>
-                <div class="map-container">
-                    <div class="map-background">
-                        <div class="river-cam"></div>
-                        
-                        <!-- 详细路线 -->
-                        <svg class="route-path" viewBox="0 0 100 100" preserveAspectRatio="none">
-                            <path class="route-line" d="M 10 50 Q 25 30 40 50 Q 55 70 70 50 Q 85 30 90 50" 
-                                  stroke="#fff" stroke-width="0.5" fill="none" opacity="0.6"/>
-                            <circle class="route-dot" cx="10" cy="50" r="0.8" fill="#fff"/>
-                            <circle class="route-dot" cx="40" cy="50" r="0.8" fill="#fff"/>
-                            <circle class="route-dot" cx="70" cy="50" r="0.8" fill="#fff"/>
-                            <circle class="route-dot" cx="90" cy="50" r="0.8" fill="#fff"/>
-                        </svg>
-                        
-                        <div class="college emmanuel-college" data-college="emmanuel">
-                            <div class="college-icon">🏛️</div>
-                            <div class="college-name">Emmanuel College</div>
-                            <div class="college-popup">
-                                <h4>Emmanuel College</h4>
-                                <p>Where our story began...</p>
-                                <p>Founded in 1584</p>
-                            </div>
-                        </div>
-                        
-                        <div class="college newnham-college" data-college="newnham">
-                            <div class="college-icon">🏛️</div>
-                            <div class="college-name">Newnham College</div>
-                            <div class="college-popup">
-                                <h4>Newnham College</h4>
-                                <p>Where magic happened...</p>
-                                <p>Founded in 1871</p>
-                            </div>
-                        </div>
-                        
-                        <div class="walking-person">🚶</div>
-                        
-                        <!-- 路线标记点 -->
-                        <div class="route-marker marker-1">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">King's Parade</div>
-                        </div>
-                        <div class="route-marker marker-2">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Silver Street</div>
-                        </div>
-                        <div class="route-marker marker-3">
-                            <div class="marker-dot"></div>
-                            <div class="marker-label">Newnham Walk</div>
-                        </div>
-                    </div>
-                    <div class="map-description">
-                        <p>From Emmanuel College to Newnham College</p>
-                        <p>Where our story began...</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 时间轴 -->
-            <div class="timeline">
-                <h3>🌟 Our Timeline 🌟</h3>
-                <div class="timeline-item">
-                    <div class="timeline-date">2024年10月11日</div>
-                    <div class="timeline-event">认识小米</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年3月16日</div>
-                    <div class="timeline-event">和小米玩玩双人成行</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年4月2日</div>
-                    <div class="timeline-event">和小米去看Hamilton</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年4月5日</div>
-                    <div class="timeline-event">和小米通关双人成行</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年4月6日</div>
-                    <div class="timeline-event">和小米去kanto</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年4月7日</div>
-                    <div class="timeline-event">在Greenwich跟小米表白</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年5月16号</div>
-                    <div class="timeline-event">把穿着我的衣服的小米亲睡着了</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年5月18号</div>
-                    <div class="timeline-event">和小米去伦敦过520</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年5月27号</div>
-                    <div class="timeline-event">陪小米去医院</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年6月19日</div>
-                    <div class="timeline-event">和小米在巴黎迪士尼看烟花</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年7月24日</div>
-                    <div class="timeline-event">来上海找小米</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2025年8月9日</div>
-                    <div class="timeline-event">小米19岁了</div>
-                </div>
-            </div>
-        </div>
+        <h1 class="title">🎉 Happy Birthday Isabel 🎉</h1>
+        <button class="click-btn" onclick="clickIt()">Click me</button>
     </div>
     
-    <div class="scroll-hint">Scroll down to read the letter 💌</div>
+    <!-- 滚动提示 -->
+    <div id="scroll-hint" style="display: none;">
+        <div class="scroll-text">Scroll Down</div>
+        <div class="scroll-arrow">↓</div>
+    </div>
     
+    <!-- Isabel图片 -->
+    <!-- <div id="isabel-image-container" style="display: none;">
+        <img src="isabel.png" alt="Isabel" class="isabel-image">
+        <div class="isabel-scroll-hint">
+            <div class="scroll-text">Scroll Down</div>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </div> -->
+
+    <!-- 滚动提示 -->
+    <div id="scroll-hint" style="display: none;">
+        <div class="scroll-text">Scroll Down</div>
+        <div class="scroll-arrow">↓</div>
+    </div>
+
+    <!-- 隐藏的背景音乐视频 -->
+    <video id="background-music" style="display: none;" loop>
+        <source src="28476900775-1-192.mp4" type="video/mp4">
+    </video>
+
     <script src="script.js"></script>
 </body>
 </html> 
